@@ -37,7 +37,7 @@ current_cup_set_id_2 = "eawf43wg:33r23t23t3r2t4234gtq34:2fq2asdfaweft23t3r2t4234
 class MyApp(QWidget):
     def __init__(self):
         super().__init__()
-        uic.loadUi('test_04.ui', self)  # Load the UI file
+        uic.loadUi('test_05.ui', self)  # Load the UI file
         self.setWindowTitle('Anatometal NFC Registration')
 
         # Get tab widget
@@ -45,11 +45,73 @@ class MyApp(QWidget):
         if self.tabWidget is None:
             print("Error: QTabWidget 'tabWidget' not found in UI!")
 
+        self.scan.setStyleSheet("background-color: #9CD3FF; color: black;")
+        self.update.setStyleSheet("background-color: #FEFF9B; color: black;")
+        self.delete.setStyleSheet("background-color: #FFA79B; color: black;")
+        self.check.setStyleSheet("background-color: #9DFF9F; color: black;")
+
         # Connect tab change signal to update method
         self.tabWidget.currentChanged.connect(self.update_tab_content)
 
         # Initialize UI content
         self.update_tab_content(0)  # Load first tab content
+
+    def scan_curr_cup_color(self):
+        """Apply styles to the curr_tag element in the scan tab."""
+        curr_so = self.findChild(QWidget, "curr_so")  # Adjust QWidget if needed (e.g., QTextEdit)
+        if curr_so:
+            curr_so.setStyleSheet("background-color: #012C57; color: white;")
+        else:
+            print("Error: curr_so element not found in scan tab!")
+
+        curr_sku = self.findChild(QWidget, "curr_sku")  # Adjust QWidget if needed (e.g., QTextEdit)
+        if curr_sku:
+            curr_sku.setStyleSheet("background-color: #012C57; color: white;")
+        else:
+            print("Error: curr_sku element not found in scan tab!")
+
+        curr_gem1 = self.findChild(QWidget, "curr_gem1")  # Adjust QWidget if needed (e.g., QTextEdit)
+        if curr_gem1:
+            curr_gem1.setStyleSheet("background-color: #012C57; color: white;")
+        else:
+            print("Error: curr_gem1 element not found in scan tab!")
+
+        curr_gem2 = self.findChild(QWidget, "curr_gem2")  # Adjust QWidget if needed (e.g., QTextEdit)
+        if curr_gem2:
+            curr_gem2.setStyleSheet("background-color: #012C57; color: white;")
+        else:
+            print("Error: curr_gem2 element not found in scan tab!")
+
+        curr_tag_2a = self.findChild(QWidget, "curr_tag_2a")  # Adjust QWidget if needed (e.g., QTextEdit)
+        if curr_tag_2a:
+            curr_tag_2a.setStyleSheet("background-color: #363101; color: white;")
+        else:
+            print("Error: curr_tag_2a element not found in scan tab!")
+
+        curr_so_2b = self.findChild(QWidget, "curr_so_2b")  # Adjust QWidget if needed (e.g., QTextEdit)
+        if curr_so_2b:
+            curr_so_2b.setStyleSheet("background-color: #363101; color: white;")
+        else:
+            print("Error: curr_so_2b element not found in scan tab!")
+
+        curr_sku_2b = self.findChild(QWidget, "curr_sku_2b")  # Adjust QWidget if needed (e.g., QTextEdit)
+        if curr_sku_2b:
+            curr_sku_2b.setStyleSheet("background-color: #363101; color: white;")
+        else:
+            print("Error: curr_sku_2b element not found in scan tab!")
+
+        curr_gem1_2b = self.findChild(QWidget, "curr_gem1_2b")  # Adjust QWidget if needed (e.g., QTextEdit)
+        if curr_gem1_2b:
+            curr_gem1_2b.setStyleSheet("background-color: #363101; color: white;")
+        else:
+            print("Error: curr_gem1_2b element not found in scan tab!")
+
+        curr_gem2_2b = self.findChild(QWidget, "curr_gem2_2b")  # Adjust QWidget if needed (e.g., QTextEdit)
+        if curr_gem2_2b:
+            curr_gem2_2b.setStyleSheet("background-color: #363101; color: white;")
+        else:
+            print("Error: curr_gem2_2b element not found in scan tab!")
+
 
     def update_tab_content(self, index):
         """Update UI elements based on the selected tab"""
@@ -168,6 +230,7 @@ class MyApp(QWidget):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     window = MyApp()
+    window.scan_curr_cup_color()
     window.show()
 
     try:
