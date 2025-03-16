@@ -37,7 +37,7 @@ current_cup_set_id_2 = "eawf43wg:33r23t23t3r2t4234gtq34:2fq2asdfaweft23t3r2t4234
 class MyApp(QWidget):
     def __init__(self):
         super().__init__()
-        uic.loadUi('test_05.ui', self)  # Load the UI file
+        uic.loadUi('test_04.ui', self)  # Load the UI file
         self.setWindowTitle('Anatometal NFC Registration')
 
         # Get tab widget
@@ -112,6 +112,35 @@ class MyApp(QWidget):
         else:
             print("Error: curr_gem2_2b element not found in scan tab!")
 
+        curr_tag_3a = self.findChild(QWidget, "curr_tag_3a")  # Adjust QWidget if needed (e.g., QTextEdit)
+        if curr_tag_3a:
+            curr_tag_3a.setStyleSheet("background-color: #360600; color: white;")
+        else:
+            print("Error: curr_tag_3a element not found in scan tab!")
+
+        curr_so_3b = self.findChild(QWidget, "curr_so_3b")  # Adjust QWidget if needed (e.g., QTextEdit)
+        if curr_so_3b:
+            curr_so_3b.setStyleSheet("background-color: #360600; color: white;")
+        else:
+            print("Error: curr_so_3b element not found in scan tab!")
+
+        curr_sku_3b = self.findChild(QWidget, "curr_sku_3b")  # Adjust QWidget if needed (e.g., QTextEdit)
+        if curr_sku_3b:
+            curr_sku_3b.setStyleSheet("background-color: #360600; color: white;")
+        else:
+            print("Error: curr_sku_3b element not found in scan tab!")
+
+        curr_gem1_3b = self.findChild(QWidget, "curr_gem1_3b")  # Adjust QWidget if needed (e.g., QTextEdit)
+        if curr_gem1_3b:
+            curr_gem1_3b.setStyleSheet("background-color: #360600; color: white;")
+        else:
+            print("Error: curr_gem1_3b element not found in scan tab!")
+
+        curr_gem2_3b = self.findChild(QWidget, "curr_gem2_3b")  # Adjust QWidget if needed (e.g., QTextEdit)
+        if curr_gem2_3b:
+            curr_gem2_3b.setStyleSheet("background-color: #360600; color: white;")
+        else:
+            print("Error: curr_gem2_3b element not found in scan tab!")
 
     def update_tab_content(self, index):
         """Update UI elements based on the selected tab"""
@@ -230,6 +259,8 @@ class MyApp(QWidget):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     window = MyApp()
+
+    # highlight value applied below
     window.scan_curr_cup_color()
     window.show()
 
