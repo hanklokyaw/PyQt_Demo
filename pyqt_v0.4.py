@@ -69,6 +69,10 @@ class MyApp(QWidget):
                                             current_cup_gem2, current_cup_gem2_2, current_cup_set_id, current_cup_set_id_2)
         elif index == 2:  # Current Cup
             self.display_current_datetime()
+            self.complete_display_current_cup(current_tag, current_status, current_cup_so, current_cup_so_2,
+                                            current_cup_sku, current_cup_sku_2, current_cup_gem1, current_cup_gem1_2,
+                                            current_cup_gem2, current_cup_gem2_2, current_cup_set_id, current_cup_set_id_2)
+
         elif index == 3:  # Previous Cup
             self.display_current_datetime()
 
@@ -115,6 +119,22 @@ class MyApp(QWidget):
         self.find_and_set_text("curr_gem2_2b", gem2_2b)
         self.find_and_set_text("curr_set_id_2a", set_id_2a)
         self.find_and_set_text("curr_set_id_2b", set_id_2b)
+
+    def complete_display_current_cup(self, tag, status, so_2a, so_2b, item_2a, item_2b,
+                                   gem1_2a, gem1_2b, gem2_2a, gem2_2b, set_id_2a, set_id_2b):
+        """Display current cup details."""
+        self.find_and_set_text("curr_tag_3a", tag)
+        self.find_and_set_text("curr_status_3a", status)
+        self.find_and_set_text("curr_so_3a", so_2a)
+        self.find_and_set_text("curr_so_3b", so_2b)
+        self.find_and_set_text("curr_sku_3a", item_2a)
+        self.find_and_set_text("curr_sku_3b", item_2b)
+        self.find_and_set_text("curr_gem1_3a", gem1_2a)
+        self.find_and_set_text("curr_gem1_3b", gem1_2b)
+        self.find_and_set_text("curr_gem2_3a", gem2_2a)
+        self.find_and_set_text("curr_gem2_3b", gem2_2b)
+        self.find_and_set_text("curr_set_id_3a", set_id_2a)
+        self.find_and_set_text("curr_set_id_3b", set_id_2b)
 
     def scan_display_previous_cup(self, tag, so, item, gem1, gem2, set_id):
         """Display previous cup details."""
