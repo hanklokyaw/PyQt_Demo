@@ -75,6 +75,8 @@ class MyApp(QWidget):
 
         elif index == 3:  # Previous Cup
             self.display_current_datetime()
+            self.check_display_current_cup(current_tag, current_cup_so, current_cup_sku, current_cup_gem1,
+                                          current_cup_gem2, current_cup_set_id)
 
     def display_current_datetime(self):
         """Get the current date and time and display it in self.date."""
@@ -144,6 +146,15 @@ class MyApp(QWidget):
         self.find_and_set_text("pre_gem1", gem1)
         self.find_and_set_text("pre_gem2", gem2)
         self.find_and_set_text("pre_set_id", set_id)
+
+    def check_display_current_cup(self, tag, so, item, gem1, gem2, set_id):
+        """Display current cup details."""
+        self.find_and_set_text("curr_tag_4", tag)
+        self.find_and_set_text("curr_so_4", so)
+        self.find_and_set_text("curr_sku_4", item)
+        self.find_and_set_text("curr_gem1_4", gem1)
+        self.find_and_set_text("curr_gem2_4", gem2)
+        self.find_and_set_text("curr_set_id_4", set_id)
 
     def find_and_set_text(self, widget_name, text):
         """Find a QTextEdit by objectName and set its text."""
