@@ -2,6 +2,7 @@ from PyQt6.QtWidgets import QApplication, QWidget, QTabWidget
 from PyQt6 import uic
 import sys
 from datetime import datetime
+from nfc_functions import continuous_tag_detection
 
 # Define the total cups and cups in use
 total_cup = 5000
@@ -37,7 +38,7 @@ current_cup_set_id_2 = "eawf43wg:33r23t23t3r2t4234gtq34:2fq2asdfaweft23t3r2t4234
 class MyApp(QWidget):
     def __init__(self):
         super().__init__()
-        uic.loadUi('test_04.ui', self)  # Load the UI file
+        uic.loadUi('test_05.ui', self)  # Load the UI file
         self.setWindowTitle('Anatometal NFC Registration')
 
         # Get tab widget
@@ -142,7 +143,9 @@ class MyApp(QWidget):
         else:
             print("Error: curr_gem2_3b element not found in scan tab!")
 
+
     def update_tab_content(self, index):
+
         """Update UI elements based on the selected tab"""
         if index == 0:  # Main Overview
             self.display_current_datetime()
